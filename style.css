@@ -198,6 +198,15 @@ body {
   display: inline;
 }
 
+/* Font Awesome skill icons */
+.skill-icon {
+  color: #DC143C;
+  font-size: 32px;
+  margin-right: 12px;
+  margin-bottom: 8px;
+  display: block;
+}
+
 /* Skill descriptions */
 .skill-item p {
   color: #555;
