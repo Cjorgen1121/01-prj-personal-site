@@ -332,43 +332,27 @@ body {
   border-top: 2px solid #DC143C;
 }
 
-/* ========================================
-   REFLECTION SECTIONS (Assignment Requirements)
-   ======================================== */
-.reflection-section {
-  padding: 30px 0;
-  margin-bottom: 40px;
-  border-bottom: 2px solid #DC143C;
+.bio-section {
+        border: 2px solid #e31837;
+        border-radius: 12px;
+        padding: 30px;
+        margin: 30px 0;
+        background-color: #f9f9f9;
+      }
+.skills-section {
+    border: 2px solid #e31837;
+    border-radius: 12px;
+    padding: 30px;
+    margin: 30px 0;
+    background-color: #ffffff;
 }
 
-/* Section heading for reflections */
-.reflection-section h2 {
-  font-size: 28px;
-  color: #DC143C;
-  margin-bottom: 15px;
-  font-weight: bold;
-}
-
-/* Question prompt styling */
-.reflection-section p:first-of-type {
-  color: #666;
-  margin-bottom: 20px;
-  font-size: 15px;
-  font-style: italic;
-}
-
-/* Answer box styling */
-.reflection-answer {
-  background-color: #f9f9f9;
-  border-left: 5px solid #DC143C;
-  padding: 20px;
-  border-radius: 6px;
-  color: #333;
-  line-height: 1.8;
-}
-
-.reflection-answer p {
-  margin-bottom: 15px;
+.projects-section {
+    border: 2px solid #e31837;
+    border-radius: 12px;
+    padding: 30px;
+    margin: 30px 0;
+    background-color: #f7f7f7;
 }
 
 /* ========================================
