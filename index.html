@@ -2,10 +2,286 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>My Personal Site</title>
+  <!-- Makes the page scale correctly on phones -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Christopher Jorgensen - Portfolio</title>
+  <meta name="description" content="Christopher Jorgensen's portfolio: four applications and how each one grew.">
+  <link rel="icon" href="img/project-emblem.webp" type="image/webp">
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <!-- Add your HTML content here -->
+
+  <!-- ========== NAVIGATION BAR ========== -->
+  <!-- Each link jumps to the section with the matching id further down the page -->
+  <nav class="navbar">
+    <div class="nav-container">
+      <a href="#home" class="logo">Chris J<span class="logo-dot">.</span></a>
+      <ul class="nav-links">
+        <li><a href="#home" class="nav-tab">Home</a></li>
+        <li><a href="#about" class="nav-tab">About</a></li>
+        <li><a href="#skills" class="nav-tab">Skills</a></li>
+        <li><a href="#projects" class="nav-tab">Projects</a></li>
+        <li><a href="#contact" class="nav-tab">Contact</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <div class="container">
+
+    <!-- ========== HEADER / HOME ========== -->
+    <header class="header" id="home">
+      <img src="img/project-emblem.webp" alt="Project emblem: a green leaf bound in silver chain, glowing purple" class="header-emblem">
+      <div class="header-text">
+        <p class="eyebrow">Portfolio · Project 1</p>
+        <h1 class="name">Christopher Jorgensen</h1>
+        <p class="tagline">Career-changer · Web and app developer · D&amp;D world builder and game designer</p>
+        <p class="header-intro">Four applications, each told the same way: the original idea, the problems I hit, what I learned, what works now, and where it's going.</p>
+        <a href="#projects" class="button">See the projects</a>
+      </div>
+    </header>
+
+    <!-- ========== ABOUT ME ========== -->
+    <section class="section" id="about">
+      <h2 class="section-title">About Me</h2>
+      <p>I'm switching careers and jumping into development head-first. I can lead teams, adapt to anything, and solve problems fast when things get chaotic. What drives me is actually building something that works: something real that people can use and interact with.</p>
+      <p><strong>I'm obsessed with building apps and interactive experiences.</strong> It started with a D&amp;D virtual tabletop extension and a dark fantasy world to go with it, and it grew into the four projects below. I love mixing storytelling with code: taking creative ideas and turning them into working software.</p>
+      <p>Here's my learning approach: I'm learning from both ends and meeting in the middle. I build real projects with AI help, working out how each piece gets built and why it works. At the same time, I'm taking HTML, CSS and JavaScript in college, learning the fundamentals and the theory. So I'm not just following tutorials: I connect what I learn in class to what I'm building, and the other way round.</p>
+      <p>My networking classes were a game-changer for understanding how systems talk to each other. Learning new coding languages is hard for me. Syntax doesn't just click, so I practice, build actual projects, and push through the frustration. Every bug I hit, I connect back to class, and every concept from class, I try in a project. It's not the fastest way to learn, but it sticks.</p>
+    </section>
+
+    <!-- ========== SKILLS ========== -->
+    <section class="section" id="skills">
+      <h2 class="section-title">Skills</h2>
+      <!-- The skill boxes sit side by side and wrap onto new rows on smaller screens -->
+      <div class="skills-container">
+        <div class="skill-item">
+          <span class="skill-icon">👥</span>
+          <h3>Leadership &amp; Adaptability</h3>
+          <p>I take charge when needed and handle whatever gets thrown at me. I work well under pressure and keep a team focused on the goal.</p>
+        </div>
+        <div class="skill-item">
+          <span class="skill-icon">🏗️</span>
+          <h3>App Development (Developing)</h3>
+          <p>Android (Kotlin), React + TypeScript and a Python + SQLite service, built with AI help and connected back to classroom HTML, CSS and JavaScript.</p>
+        </div>
+        <div class="skill-item">
+          <span class="skill-icon">🎲</span>
+          <h3>Campaign &amp; World Building</h3>
+          <p>Dark fantasy and sci-fi worlds with deep lore and connected game systems, applied to one complete campaign and its combat tool. 8+ hours a day since May 2026.</p>
+        </div>
+        <div class="skill-item">
+          <span class="skill-icon">🧭</span>
+          <h3>Systems Design</h3>
+          <p>Shared state, permissions, checkpoints and test gates: I usually meet the problem first, then learn what it's called and how others solve it.</p>
+        </div>
+        <div class="skill-item">
+          <span class="skill-icon">🤖</span>
+          <h3>AI-Assisted Development</h3>
+          <p>Working with Claude, Codex, ChatGPT, Gemini and OpenCode, and checking their work with tests, builds and receipts instead of taking "done" on trust.</p>
+        </div>
+        <div class="skill-item">
+          <span class="skill-icon">💪</span>
+          <h3>Persistence</h3>
+          <p>Coding languages don't come easy to me, but I don't give up. I practice and build real projects until it clicks.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========== PROJECTS ========== -->
+    <section class="section" id="projects">
+      <h2 class="section-title">Projects</h2>
+
+      <!-- Main project image -->
+      <div class="projects-banner">
+        <img src="img/project-emblem.webp" alt="Project emblem: a green leaf bound in silver chain, glowing purple against a dark fantasy sky" class="project-image">
+        <div class="projects-banner-text">
+          <p class="projects-intro">Every project follows the same story:</p>
+          <p class="story-path">Original idea → Problems → What I learned → Where it is now → End goal</p>
+          <p class="projects-note">Public projects link to their code on GitHub. Private ones are still being built, so they're described here instead.</p>
+        </div>
+      </div>
+
+      <!-- ===== Project 1: Roadleaf (public) ===== -->
+      <article class="project-card roadleaf">
+        <div class="project-head">
+          <div>
+            <h3 class="project-title">Roadleaf</h3>
+            <p class="project-subtitle">Offline audio reader for Android</p>
+          </div>
+          <span class="status public">Public</span>
+        </div>
+        <p class="project-tech"><strong>Built with:</strong> Kotlin, Jetpack Compose, Room, Media3, Android TextToSpeech</p>
+        <ol class="story">
+          <li>
+            <h4>Original idea</h4>
+            <p>Listen to books, web serials and my own stories hands-free while driving, using the voices already on my phone: no cloud narration, subscription or account.</p>
+          </li>
+          <li>
+            <h4>Problems</h4>
+            <p>One flat voice made long sessions tiring and characters blurred together. Web pages were full of menus and ads, phone calls and car audio had to pause and resume correctly, and native voice engines crashed the app until the playback path was fixed.</p>
+          </li>
+          <li>
+            <h4>What I learned</h4>
+            <p>How an Android app is put together: screens in Compose, a Room database, Media3 playback and audio focus. Also that a reader should only read what your account can see, and never work around paywalls or sign-ins.</p>
+          </li>
+          <li>
+            <h4>Where it is now</h4>
+            <p>Imports EPUB and TXT, reads any secure webpage and turns chapters itself, and gives characters their own voices as it learns them. Drive view, Android Auto and a battery saver are built in, with test builds on GitHub. 55 commits since November 9, 2026.</p>
+          </li>
+          <li>
+            <h4>End goal</h4>
+            <p>Listening that feels like someone reading to you, and the place where finished, approved chapters from the Reality Engine are read.</p>
+          </li>
+        </ol>
+        <a href="https://github.com/fdmcadmin/Audio_Reader-travel" class="project-link" target="_blank" rel="noopener">View on GitHub →</a>
+      </article>
+
+      <!-- ===== Project 2: Forever DM Combat (public) ===== -->
+      <article class="project-card fdmc">
+        <div class="project-head">
+          <div>
+            <h3 class="project-title">Forever DM Combat</h3>
+            <p class="project-subtitle">D&amp;D combat extension for Owlbear Rodeo</p>
+          </div>
+          <span class="status public">Public</span>
+        </div>
+        <p class="project-tech"><strong>Built with:</strong> React, TypeScript, Vite, Owlbear Rodeo SDK</p>
+        <ol class="story">
+          <li>
+            <h4>Original idea</h4>
+            <p>Running combat for my dark fantasy campaign, The Broken Chain, was slow: HP, initiative and actions for every player and monster. I wanted a virtual tabletop extension that tracks the table so the DM can run it.</p>
+          </li>
+          <li>
+            <h4>Problems</h4>
+            <p>Two browsers could disagree about a creature's HP. The player view could leak DM-only information. Features got rebuilt twice because nobody checked whether they already existed, and the first version got tangled enough that I started a clean rebuild in June 2026.</p>
+          </li>
+          <li>
+            <h4>What I learned</h4>
+            <p>Decide where each fact lives by who needs to see it: shared room state with one writer (the DM), live broadcasts, and private browser storage. Keep the engine, the D&amp;D rules and the campaign content in separate layers, and check a build before trusting it.</p>
+          </li>
+          <li>
+            <h4>Where it is now</h4>
+            <p>Version 0.8.80, with 818 commits since June 5, 2026. A main popover, DM panel, combat window, character and creature pop-outs, level-up flow and player tracker. It tracks, shows and rolls; it never resolves a turn for you.</p>
+          </li>
+          <li>
+            <h4>End goal</h4>
+            <p>An engine that can run any d20 game through modules, with The Broken Chain as its first full campaign, ready for my group at the table.</p>
+          </li>
+        </ol>
+        <a href="https://github.com/fdmcadmin/fdmc-forever-dm-combat" class="project-link" target="_blank" rel="noopener">View on GitHub →</a>
+      </article>
+
+      <!-- ===== Project 3: Unified AI Dashboard (private) ===== -->
+      <article class="project-card dashboard">
+        <div class="project-head">
+          <div>
+            <h3 class="project-title">Unified AI Dashboard</h3>
+            <p class="project-subtitle">Black Hole workstation: one local control center for AI work</p>
+          </div>
+          <span class="status private">Private · in development</span>
+        </div>
+        <p class="project-tech"><strong>Built with:</strong> Python, SQLite, HTML, CSS, JavaScript</p>
+        <ol class="story">
+          <li>
+            <h4>Original idea</h4>
+            <p>I use Claude, Codex, ChatGPT, Gemini and OpenCode for different jobs, each with its own window, account and history. I kept asking "where did we leave that file or decision?", so the idea was one local workspace that remembers where the work actually stands.</p>
+          </li>
+          <li>
+            <h4>Problems</h4>
+            <p>Which file is the real one, when a newer date doesn't mean approved? Why explain the same project twice? What did all those model calls actually cost? And how do I tell a real feature from a promising screen?</p>
+          </li>
+          <li>
+            <h4>What I learned</h4>
+            <p>Finding a file isn't verifying it. Continuing a session needs storage, checks and recovery, not just a summary. Honest measurement leaves unknown numbers unknown. And designed, coded, tested offline and working live are four different milestones.</p>
+          </li>
+          <li>
+            <h4>Where it is now</h4>
+            <p>A real local app: a Python service with SQLite and a browser interface. It has project records, a task controller, conversations filed by topic, a usage dashboard per account, and a 13-seat station map with checked job delivery for two seats. 23 test suites pass locally; some AI connections are still only partly qualified.</p>
+          </li>
+          <li>
+            <h4>End goal</h4>
+            <p>A normal multi-hour session that saves its work, tracks usage, safely changes context and resumes without rebuilding the conversation. After that, a full story chapter carried from Generator to Reviewer.</p>
+          </li>
+        </ol>
+
+        <!-- Screenshots stand in for the code, since the repository is private -->
+        <h4 class="gallery-title">Screenshots</h4>
+        <div class="gallery">
+          <a href="img/dashboard/usage-dashboard.png" class="shot" target="_blank" rel="noopener">
+            <img src="img/dashboard/usage-dashboard.png" alt="Usage dashboard: each Claude account's tokens, limit hits and model usage" loading="lazy">
+            <span>Usage per account</span>
+          </a>
+          <a href="img/dashboard/provider-usage.png" class="shot" target="_blank" rel="noopener">
+            <img src="img/dashboard/provider-usage.png" alt="Usage cards for Gemini, Codex and OpenCode with remaining-window gauges" loading="lazy">
+            <span>Provider usage windows</span>
+          </a>
+          <a href="img/dashboard/black-hole-station.png" class="shot" target="_blank" rel="noopener">
+            <img src="img/dashboard/black-hole-station.png" alt="Black Hole Station: 13 seats grouped by division, with the Venice relay below" loading="lazy">
+            <span>Black Hole Station</span>
+          </a>
+          <a href="img/dashboard/topic-library.png" class="shot" target="_blank" rel="noopener">
+            <img src="img/dashboard/topic-library.png" alt="Topic library: messages filed by subject with counts per topic" loading="lazy">
+            <span>Topic library</span>
+          </a>
+          <a href="img/dashboard/provider-teams.png" class="shot" target="_blank" rel="noopener">
+            <img src="img/dashboard/provider-teams.png" alt="Provider teams and the chat workspace for a selected provider" loading="lazy">
+            <span>Provider teams</span>
+          </a>
+        </div>
+        <p class="private-note">Private repository: code isn't public yet.</p>
+      </article>
+
+      <!-- ===== Project 4: Reality Engine (private) ===== -->
+      <article class="project-card engine">
+        <div class="project-head">
+          <div>
+            <h3 class="project-title">Reality Engine</h3>
+            <p class="project-subtitle">A system that remembers and manages a whole fictional world</p>
+          </div>
+          <span class="status private">Private · in design</span>
+        </div>
+        <p class="project-tech"><strong>Built on:</strong> the Unified AI Dashboard's task controller and Black Hole seats</p>
+        <ol class="story">
+          <li>
+            <h4>Original idea</h4>
+            <p>I wanted to write Meridian, an ongoing sci-fi story with crews, ships, rival factions and relationships, where choices still matter chapters later instead of disappearing the next time I ask a model to write.</p>
+          </li>
+          <li>
+            <h4>Problems</h4>
+            <p>A model could write a good scene and still get the world wrong: a character knowing something they never saw, or forgetting their own history. One model judging its own work missed things, and failed drafts threw away good ideas.</p>
+          </li>
+          <li>
+            <h4>What I learned</h4>
+            <p>The ideas behind state management, access control and structured memory: what the world knows is different from what each character knows. What a model writes is different from what the system accepts. And the worker who says "I finished" shouldn't also approve their own work.</p>
+          </li>
+          <li>
+            <h4>Where it is now</h4>
+            <p>The design is documented: role boundaries, alternate timelines, world-state permissions and publication gates. The worker handoff is tested offline, with job cards, delivery folders for two seats and file checks. Automatic workers and full chapter publishing aren't live yet.</p>
+          </li>
+          <li>
+            <h4>End goal</h4>
+            <p>One complete chapter run: a Generator writes, Canon and Behavior check it, a Reviewer approves the exact version, a Fixer repairs a permitted seam, and the Director releases the chapter with a matching world-state lock. Readers get only the approved release.</p>
+          </li>
+        </ol>
+        <p class="private-note">No public repository yet: the design and the offline-tested handoff live inside the dashboard project.</p>
+      </article>
+    </section>
+
+    <!-- ========== CONTACT ========== -->
+    <section class="section" id="contact">
+      <h2 class="section-title">Contact</h2>
+      <p>Want to see more, or talk about a project? Find me on GitHub.</p>
+      <div class="contact-links">
+        <a href="https://github.com/Cjorgen1121" class="button" target="_blank" rel="noopener">GitHub · Cjorgen1121</a>
+        <a href="https://github.com/fdmcadmin" class="button button-outline" target="_blank" rel="noopener">Project repos · fdmcadmin</a>
+      </div>
+    </section>
+
+    <!-- ========== FOOTER ========== -->
+    <footer class="footer">
+      <p>&copy; 2026 Christopher Jorgensen. Built with HTML and CSS.</p>
+    </footer>
+
+  </div>
 </body>
 </html>

@@ -1,1 +1,576 @@
-/* Add you CSS here */
+/* ========================================
+   PERSONAL PORTFOLIO - STYLES
+   Dark, structured "app dashboard" look
+   ======================================== */
+
+/* COLOR PALETTE
+   These are CSS variables: define a color once here, then use it anywhere with var(--name).
+   Change a value here and every place that uses it changes too. */
+:root {
+  --bg: #0b1018;          /* page background (very dark navy) */
+  --surface: #121a26;     /* panels and cards */
+  --surface-2: #18222f;   /* slightly lighter panels */
+  --line: #2c3a4c;        /* borders */
+  --ink: #e6edf5;         /* main text */
+  --mute: #93a4b9;        /* secondary text */
+  --purple: #b47aff;      /* main accent, from the project emblem's glow */
+  --green: #8be04e;       /* second accent, from the emblem's leaf */
+}
+
+/* RESET AND BASIC STYLES */
+/* Removes the browser's default margins and padding */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Smooth scrolling when a nav link jumps to a section */
+html {
+  scroll-behavior: smooth;
+}
+
+/* BODY - basic page styling */
+body {
+  font-family: "Segoe UI", Arial, sans-serif;
+  line-height: 1.6;
+  color: var(--ink);
+  background-color: var(--bg);
+}
+
+/* Images never grow wider than their box */
+img {
+  max-width: 100%;
+  display: block;
+}
+
+/* Links use the green accent */
+a {
+  color: var(--green);
+}
+
+/* ========================================
+   NAVIGATION BAR
+   ======================================== */
+.navbar {
+  background-color: rgba(11, 16, 24, 0.92);
+  border-bottom: 1px solid var(--line);
+  padding: 12px 0;
+  position: sticky;      /* stays at the top while you scroll */
+  top: 0;
+  z-index: 100;
+}
+
+/* Flexbox puts the logo on the left and the links on the right */
+.nav-container {
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 0 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.logo {
+  color: var(--ink);
+  font-size: 22px;
+  font-weight: bold;
+  text-decoration: none;
+}
+
+.logo-dot {
+  color: var(--purple);
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+.nav-tab {
+  color: var(--mute);
+  text-decoration: none;
+  font-weight: 600;
+  padding: 8px 12px;
+  border-radius: 6px;
+  transition: color 0.2s ease, background-color 0.2s ease;
+}
+
+/* Hover: the tab lights up */
+.nav-tab:hover {
+  color: var(--ink);
+  background-color: var(--surface-2);
+}
+
+/* ========================================
+   PAGE CONTAINER
+   ======================================== */
+/* Centers the content and limits how wide it gets */
+.container {
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 24px 20px;
+}
+
+/* Jumping to a section leaves room for the sticky nav bar */
+.header,
+.section {
+  scroll-margin-top: 80px;
+}
+
+/* ========================================
+   HEADER / HOME
+   ======================================== */
+.header {
+  display: flex;           /* emblem beside the text */
+  align-items: center;
+  gap: 32px;
+  padding: 36px;
+  margin-bottom: 32px;
+  background-color: var(--surface);
+  border: 1px solid var(--line);
+  border-top: 3px solid var(--purple);
+  border-radius: 12px;
+}
+
+.header-emblem {
+  width: 200px;
+  height: 200px;
+  flex-shrink: 0;          /* the emblem keeps its size */
+  border-radius: 12px;
+  border: 1px solid var(--line);
+  box-shadow: 0 0 40px rgba(180, 122, 255, 0.25);
+}
+
+/* Small label above the name */
+.eyebrow {
+  color: var(--purple);
+  font-size: 12px;
+  font-weight: bold;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
+
+.name {
+  font-size: 44px;
+  line-height: 1.15;
+  margin: 6px 0 8px;
+}
+
+.tagline {
+  color: var(--green);
+  font-weight: 600;
+  margin-bottom: 12px;
+}
+
+.header-intro {
+  color: var(--mute);
+  margin-bottom: 20px;
+}
+
+/* ========================================
+   BUTTONS
+   ======================================== */
+.button {
+  display: inline-block;
+  background-color: var(--purple);
+  color: #12081f;
+  font-weight: bold;
+  text-decoration: none;
+  padding: 10px 18px;
+  border-radius: 8px;
+  border: 2px solid var(--purple);
+  transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+.button:hover {
+  background-color: transparent;
+  color: var(--purple);
+}
+
+/* A second button style with only an outline */
+.button-outline {
+  background-color: transparent;
+  color: var(--green);
+  border-color: var(--green);
+}
+
+.button-outline:hover {
+  background-color: var(--green);
+  color: #0b1018;
+}
+
+/* ========================================
+   SECTIONS (About, Skills, Projects, Contact)
+   ======================================== */
+.section {
+  background-color: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  padding: 32px;
+  margin-bottom: 32px;
+}
+
+.section-title {
+  font-size: 28px;
+  margin-bottom: 18px;
+  padding-left: 12px;
+  border-left: 4px solid var(--purple);
+}
+
+.section p {
+  margin-bottom: 14px;
+}
+
+.section p:last-child {
+  margin-bottom: 0;
+}
+
+/* ========================================
+   SKILLS
+   ======================================== */
+/* Flexbox with wrap: boxes sit side by side and move to a new row when out of space */
+.skills-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+}
+
+.skill-item {
+  flex: 1 1 260px;         /* grow and shrink, aiming for about 260px wide */
+  background-color: var(--surface-2);
+  border: 1px solid var(--line);
+  border-left: 4px solid var(--green);
+  border-radius: 8px;
+  padding: 18px;
+  transition: transform 0.2s ease, border-color 0.2s ease;
+}
+
+.skill-item:hover {
+  transform: translateY(-3px);
+  border-color: var(--purple);
+}
+
+.skill-icon {
+  font-size: 26px;
+}
+
+.skill-item h3 {
+  font-size: 18px;
+  margin: 6px 0;
+}
+
+.skill-item p {
+  color: var(--mute);
+  font-size: 14px;
+}
+
+/* ========================================
+   PROJECTS
+   ======================================== */
+/* The main project image with the story path beside it */
+.projects-banner {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+  background-color: var(--surface-2);
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  padding: 20px;
+  margin-bottom: 28px;
+}
+
+.project-image {
+  width: 160px;
+  height: 160px;
+  flex-shrink: 0;
+  border-radius: 10px;
+  border: 1px solid var(--line);
+}
+
+.projects-intro {
+  color: var(--mute);
+}
+
+/* The five story steps, in monospace like the dashboard's labels */
+.story-path {
+  font-family: Consolas, "Courier New", monospace;
+  color: var(--green);
+  font-weight: bold;
+}
+
+.projects-note {
+  color: var(--mute);
+  font-size: 14px;
+}
+
+/* PROJECT CARD
+   Each card sets its own accent color in --card (see the four project colors below) */
+.project-card {
+  --card: var(--purple);
+  background-color: var(--bg);
+  border: 1px solid var(--line);
+  border-top: 4px solid var(--card);
+  border-radius: 10px;
+  padding: 24px;
+  margin-bottom: 24px;
+}
+
+.project-card:last-child {
+  margin-bottom: 0;
+}
+
+/* One accent color per project */
+.roadleaf  { --card: #4ade80; }   /* green */
+.fdmc      { --card: #f87171; }   /* red */
+.dashboard { --card: #2dd4bf; }   /* teal */
+.engine    { --card: #b47aff; }   /* purple */
+
+/* Title on the left, status badge on the right */
+.project-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 12px;
+  flex-wrap: wrap;
+  margin-bottom: 8px;
+}
+
+.project-title {
+  font-size: 24px;
+  color: var(--card);
+}
+
+.project-subtitle {
+  color: var(--mute);
+}
+
+/* STATUS BADGES - small labels like the dashboard's "CLI SEAT" tags */
+.status {
+  font-family: Consolas, "Courier New", monospace;
+  font-size: 12px;
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  padding: 4px 10px;
+  border-radius: 4px;
+  border: 1px solid;
+  white-space: nowrap;
+}
+
+.status.public {
+  color: #4ade80;
+  background-color: #12301f;
+  border-color: #1f6b3d;
+}
+
+.status.private {
+  color: #facc15;
+  background-color: #2d2708;
+  border-color: #6b5a0f;
+}
+
+.project-tech {
+  color: var(--mute);
+  font-size: 14px;
+  margin: 10px 0 18px;
+}
+
+.project-tech strong {
+  color: var(--ink);
+}
+
+/* THE STORY - a numbered list styled as a timeline */
+.story {
+  list-style: none;
+  counter-reset: step;     /* starts a counter for the step numbers */
+  border-left: 2px solid var(--line);
+  margin: 0 0 20px 12px;
+}
+
+.story li {
+  counter-increment: step; /* adds 1 for each step */
+  position: relative;
+  padding: 0 0 16px 28px;
+}
+
+.story li:last-child {
+  padding-bottom: 0;
+}
+
+/* The numbered circle on the timeline line */
+.story li::before {
+  content: counter(step);
+  position: absolute;
+  left: -13px;
+  top: 0;
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  background-color: var(--surface);
+  border: 2px solid var(--card);
+  color: var(--card);
+  font-size: 12px;
+  font-weight: bold;
+  text-align: center;
+  line-height: 20px;
+}
+
+.story h4 {
+  color: var(--card);
+  font-size: 13px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.story p {
+  color: var(--ink);
+  font-size: 15px;
+  margin: 2px 0 0;
+}
+
+/* Project link button */
+.project-link {
+  display: inline-block;
+  color: var(--card);
+  text-decoration: none;
+  font-weight: bold;
+  padding: 9px 16px;
+  border: 2px solid var(--card);
+  border-radius: 8px;
+  transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+.project-link:hover {
+  background-color: var(--card);
+  color: var(--bg);
+}
+
+/* Note shown instead of a link for private projects */
+.private-note {
+  color: #facc15;
+  font-size: 14px;
+  font-style: italic;
+  margin: 0;
+}
+
+/* SCREENSHOT GALLERY (dashboard card) */
+.gallery-title {
+  color: var(--card);
+  font-size: 13px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-bottom: 10px;
+}
+
+/* Flexbox with wrap: thumbnails flow into rows */
+.gallery {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-bottom: 16px;
+}
+
+.shot {
+  flex: 1 1 260px;
+  background-color: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  overflow: hidden;        /* keeps the image inside the rounded corners */
+  text-decoration: none;
+  transition: border-color 0.2s ease;
+}
+
+.shot img {
+  width: 100%;
+  height: 160px;
+  object-fit: cover;       /* fills the box without stretching */
+  object-position: top left;
+}
+
+.shot span {
+  display: block;
+  padding: 8px 12px;
+  color: var(--mute);
+  font-size: 13px;
+}
+
+.shot:hover {
+  border-color: var(--card);
+}
+
+/* ========================================
+   CONTACT
+   ======================================== */
+.contact-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: 6px;
+}
+
+/* ========================================
+   FOOTER
+   ======================================== */
+.footer {
+  text-align: center;
+  color: var(--mute);
+  font-size: 14px;
+  padding: 16px 0 8px;
+}
+
+/* ========================================
+   RESPONSIVE DESIGN (phones and small screens)
+   ======================================== */
+@media (max-width: 700px) {
+  /* On phones the links wrap onto two rows, so the bar scrolls away instead of covering the page */
+  .navbar {
+    position: static;
+  }
+
+  .nav-tab {
+    padding: 6px 10px;
+  }
+
+  .header,
+  .section {
+    scroll-margin-top: 0;
+  }
+
+  /* Stack the emblem above the text */
+  .header,
+  .projects-banner {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 22px;
+  }
+
+  .header-emblem {
+    width: 140px;
+    height: 140px;
+  }
+
+  .name {
+    font-size: 34px;
+  }
+
+  .section {
+    padding: 22px;
+  }
+
+  .section-title {
+    font-size: 24px;
+  }
+
+  .project-card {
+    padding: 18px;
+  }
+
+  .project-title {
+    font-size: 21px;
+  }
+}
