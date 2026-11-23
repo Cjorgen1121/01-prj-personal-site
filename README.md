@@ -9,6 +9,8 @@ Launch a Codespace to get started. **Remember to Commit and Push** your project 
 
 ## My portfolio
 
+**Live site:** https://cjorgen1121.github.io/01-prj-personal-site/
+
 A single-page portfolio (HTML and CSS only) presenting four applications. Each one follows the same story: original idea → problems → what I learned → where it is now → end goal.
 
 | Project | Status | Code |
@@ -22,7 +24,9 @@ A single-page portfolio (HTML and CSS only) presenting four applications. Each o
 
 - `index.html`: the page (nav, header, about, skills, projects, contact)
 - `style.css`: dark dashboard styling, flexbox only, with comments
-- `img/project-emblem.webp`: the project image; `img/dashboard/`: dashboard screenshots
+- `img/project-emblem.webp`: the project image; `img/dashboard/` and `img/fdmc/`: screenshots
+
+GitHub Pages publishes the `cjorgensen-portfolio` branch, which is kept identical to `main`.
 
 ### Preview and save in Codespaces
 
